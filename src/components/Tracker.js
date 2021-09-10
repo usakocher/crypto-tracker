@@ -29,7 +29,8 @@ const useStyles = makeStyles({
         borderRadius: '4px',
         border: 'none',
         backgroundImage: 'linear-gradient(-225deg, #f3e9e7 0%, #9bcfe0 48%, #00a7c7 100%)',
-        color: '#e76f3d'
+        color: '#e76f3d',
+        fontSize: '25px'
     },    
     
     // searchInput::placeholder {
@@ -46,23 +47,24 @@ const useStyles = makeStyles({
     },    
     coinName: {
         fontSize: '16px',
-        width: '200px',
+        width: '180px',
+        marginLeft: '25px'
     },    
     symbol: {
         width: '190px',
     },    
     price: {
-        width: '120px',
+        width: '130px',
         marginRight: '50px',
     },    
     volume: {
-        width: '155px',
+        width: '175px',
     },    
     mktCap: {
-        width: '200px',
+        width: '140px',
     },    
     percent: {
-        width: '130px',
+        width: '180px',
     }     
 })
 
@@ -75,7 +77,6 @@ export const Tracker = () => {
         axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false')
         .then(res => {
             setCoins(res.data)
-            console.log(res.data)
         }).catch(error => console.log(error))
         }, []);
     

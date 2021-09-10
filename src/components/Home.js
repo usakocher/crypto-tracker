@@ -21,8 +21,10 @@ const useStyles = makeStyles({
         width: '30%',
         marginTop: '12%',
         paddingLeft: '0.5rem',
-        paddingRight: '2rem',
-        float: 'right'
+        marginRight: '2rem',
+        float: 'right',
+        border: '1px solid #1a1a1c',
+        borderRadius: '25px'
     },
     asideP: {
         margin: '0.5rem'
@@ -41,6 +43,8 @@ export const Home = () => {
             <div className={classes.showcase}>
                 <aside className={classes.aside}>
                     <p className={classes.asideP}>More than 1 in 10 Americans invested in cryptocurrency over the past year, according to a survey published by the University of Chicago, a sign of the popularity of digital currencies like bitcoin and ethereum. Is it time for you?</p>
+                    <br/>
+                    <p className={classes.asideP}>We track up to 100 cryptocurrencies in real-time, in an easy to follow, searchable format. We also give you the information on the most popular crypto exchanges, and the benefits of each one.</p>
                     <br/>
                     <p className={classes.asideP}>Here at CTE we strive to give you the tools necessary to build your future through cryptocurrency. We want to create a secure environment so that you have all the information and can make the best decisions. The future of investing is calling, don't send it straight to voicemail.</p>
                 </aside>

@@ -13,6 +13,7 @@ const useStyles = makeStyles({
         textDecoration: 'none',
         padding: '8px 15px',
         fontSize: '35px'
+        
     },
     ul: {
         display: 'flex',
