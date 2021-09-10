@@ -13,7 +13,7 @@ const useStyles = makeStyles({
         alignItems: 'center',
         height: '80px',
         borderBottom: '1px solid #d7d7d7',
-        width: '900px'
+        width: '1000px'
     },
     coin : {
         display: 'flex',
@@ -56,11 +56,16 @@ const useStyles = makeStyles({
         width: '80px',
         color: '#11d811'
     },
-
+    percentWhite: {
+        width: '80px',
+        color: 'white'
+    },
 })
 
-export const Coin = ({ name, price, symbol, marketcap, volume, image, priceChange }) => {
+export const Coin = ({ name, price, high, low, symbol, marketcap, volume, image, priceChange }) => {
     const classes = useStyles();
+    const range = high - low;
+    const currentLocation = price/range;
 
     return (
         <div className={classes.container}>
@@ -72,13 +77,26 @@ export const Coin = ({ name, price, symbol, marketcap, volume, image, priceChang
                 </div>
                 <div className={classes.data}>
                     <p className={classes.price}>${price.toLocaleString()}</p>
-                    <p className={classes.volume}>${volume.toLocaleString()}</p>
-
+                    
                     {priceChange < 0 ? (
                         <p className={classes.percentRed}>{priceChange.toFixed(2)}%</p>
                     ) : (
                         <p className={classes.percentGreen}>{priceChange.toFixed(2)}%</p>
                     )}
+                    
+                    {(() => {
+                        switch (true) {
+                            case (currentLocation > 85):
+                                return <p className={classes.percentGreen}>{currentLocation.toFixed(2)}%</p>;
+                            case (currentLocation < 15):
+                                return <p className={classes.percentRed}>{currentLocation.toFixed(2)}%</p>;
+                            default:
+                                return <p className={classes.percentWhite}>{currentLocation.toFixed(2)}%</p>;
+                        }
+                    })()}
+                    
+                    <p className={classes.volume}>${volume.toLocaleString()}</p>
+
 
                     <p className={classes.mktCap}>
                         ${marketcap.toLocaleString()}
