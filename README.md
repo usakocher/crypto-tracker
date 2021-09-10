@@ -9,7 +9,8 @@ in a table. I provided formatting to better understand the data and an extra ana
 website.
 
 ## Challenges
-The main challenge with this project was the formatting. There are a couple tables and formatting those tables took some trial and error.
+The main challenge with this project was the formatting. There are a couple tables and formatting those tables took some trial and error. The other challenge would be to make
+this app responsive, right now it is not but it could be adapted in the future.
 
 ## Future Potential
 There are things to add in the future. The tracker itself and other aspects could be held behind an authentication protected route, so that you would have to sign in with a
